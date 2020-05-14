@@ -1,0 +1,19 @@
+<page layout="3columns" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name = "logo">
+            <arguments>
+                <argument name="logo_file" xsi:type="string">images/preview.png</argument>
+                <argument name="logo_img_width" xsi:type="number">80</argument>
+                <argument name="logo_img_height" xsi:type="number">80</argument>
+            </arguments>
+        </referenceBlock>
+        <referenceBlock name="register-link" remove="false"/>
+        <move  element="top.search" destination="header.panel" before="-"/>
+        <move element="minicart" destination="header.panel" before="-"/>
+        <container name="logo.menu.container" as="logomenuContainer" label="Logo Menu Container" htmlTag="div" htmlClass="logo-menu-container">
+        </container>
+        <move element="logo" destination="logo.menu.container" before="-"/>
+        <move element="navigation.sections" destination="logo.menu.container" after="-"/>
+        <move element="logo.menu.container" destination="header-wrapper"/>
+    </body>
+</page>
