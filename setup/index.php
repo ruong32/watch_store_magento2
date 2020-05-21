@@ -29,6 +29,7 @@ HTML;
 // For Setup Wizard we are using our customized error handler
 $handler = new \Magento\Framework\App\ErrorHandler();
 set_error_handler([$handler, 'handler']);
+error_reporting (E_ERROR);
 
 $configuration = require __DIR__ . '/config/application.config.php';
 $bootstrap = new Application();
