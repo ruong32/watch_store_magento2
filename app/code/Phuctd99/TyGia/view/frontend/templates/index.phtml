@@ -1,0 +1,31 @@
+<div class="block-title-main">
+                <h2>TỶ GIÁ CẬP NHẬT</h2>
+                <div class="title-border"></div>
+</div>
+<?php
+  $data = $block->getTyGia();
+?>
+<table>
+    <tbody>
+        <tr>
+            <th style="background-color: #f2703e ; color: white; border: 1px solid #ddd">Mã ngoại tệ</th>
+            <th style="background-color: #f2703e ; color: white; border: 1px solid #ddd">Tên ngoại tệ</th>
+            <th style="background-color: #f2703e ; color: white; border: 1px solid #ddd">Tiền mặt</th>
+            <th style="background-color: #f2703e ; color: white; border: 1px solid #ddd">Chuyển khoản</th>
+            <th style="background-color: #f2703e ; color: white; border: 1px solid #ddd">Bán</th>
+        </tr>
+        <?php
+            foreach($data->Exrate as $Exrates) {
+        ?>
+            <tr>
+                <td style="border: 1px solid #ddd"><?php echo $Exrates['CurrencyCode'] ?></td>
+                <td style="border: 1px solid #ddd"><?php echo $Exrates['CurrencyName'] ?></td>
+                <td style="border: 1px solid #ddd"><?php echo $Exrates['Buy'] ?></td>
+                <td style="border: 1px solid #ddd"><?php echo $Exrates['Transfer'] ?></td>
+                <td style="border: 1px solid #ddd"><?php echo $Exrates['Sell'] ?></td>
+            </tr>
+        <?php
+            } 
+        ?>
+    </tbody>
+</table>
